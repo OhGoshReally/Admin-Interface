@@ -1,0 +1,78 @@
+{% extends "admininterface/base.html" %}
+{% block content %}
+{% load static %}
+
+<form>
+  <table>
+    <thead>
+      Sabtest
+    </thead>
+    <tr>
+      <td>
+        URL
+      </td>
+      <td>
+        <input type="text" id="sab_url" />
+      </td>
+    </tr>
+    <tr>
+        <td>
+          API Key
+        </td>
+        <td>
+          <input type="text" id="sab_key" />
+        </td>
+    </tr>
+    <tr>
+      <td>
+        <button type="button" onclick="sabstatus()">Submit</button>
+      </td>
+      <td>
+        <button type="button" onclick="saveSab()">Save</button>
+      </td>
+    </tr>
+  </table>
+</form>
+<img src="{% static 'img/load.gif' %}" id="load" onload="$(this).hide()" />
+<div id="saboutput">
+  <table>
+    <tr>
+      <td>
+        Queue:
+      </td>
+      <td id="sab_queue"></td>
+    </tr>
+    <tr>
+      <td>
+        Time Left:
+      </td>
+      <td id="sab_timeLeft"></td>
+    </tr>
+    <tr>
+      <td>
+        Speed:
+      </td>
+      <td id="sab_speed">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Size Total:
+      </td>
+      <td id="sab_sizeTotal"></td>
+    </tr>
+    <tr>
+      <td>
+        Size Left:
+      </td>
+      <td id="sab_sizeLeft"></td>
+    </tr>
+  </table>
+
+</div>
+
+<script src="{% static 'js/status.js' %}"></script>
+<script>
+  $( document ).ready( loadComplete );
+</script>
+{% endblock %}

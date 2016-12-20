@@ -1,109 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "admininterface/base.html" %}
+{% block content %}
 
-	<title>TestPage</title>
-	<meta charset="utf-8">
-	
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
-	<link rel="stylesheet" type="text/css" href="css/fix.css">
-
-	<link rel="stylesheet" type="text/css" href="css/Custom.css">
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-	<!-- Latest compiled JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
-	
-	<script src="js/custom.js"></script>
-	
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-<link rel="icon" href="iconmaybe4.png">
-
-<title>OhGoshReally</title>
-
-<style>
-	.parallax {
-		background-image: url("DrM10.jpg");
-		height: 300px;
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		width: 100%;
-	}
-
-	body {
-		margin:0;
-		padding:0;
-	}
-	
-	.affix {
-		top: 0;
-		width: 100%;
-	}
-
-	.affix + .container-fluid {
-		padding-top: 70px;
-	}
-
-</style>
-
-<div class="parallax"></div>
-	
-<script src="js/script.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-
-<script>
-
-$(function() {
-  getLinks();
-});
-
-</script>
-
-</head>
-<body>
-
-	<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="300">
-		<div class="container-fluid">
-		
-			
-			<!-- LOGO //-->
-			<div class="navbar-header">
-			
-				<!-- <a href="#" class="navbar-brand">OHGOSHREALLY</a> /-->
-			</div>
-			
-			<div>
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.html">Admin</a></li>
-					<li><a href="#">Stats</a></li>
-					<li><a href="logs.html">Logs</a></li>
-					<li><a href="#">Settings</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
 
 	<!--
 
 	<div class="container">
 		<h1>My First Bootstrap Page</h1>
 		<p>This is some text.</p>
-	
+
 		<div class="row">
 			<div class="col-sm-4" style="background-color: #FF9999">Left</div>
 			<div class="col-sm-4" style="background-color: #99CCFF">Middle</div>
 			<div class="col-sm-4" style="background-color: #00CC99">Right</div>
 		</div>
 	</div>
-	
+
 	<div class="container">
 		<!-- <div class="row">
 			<div class="col-sm-1" style="background-color: #FF9999">1</div>
@@ -112,9 +23,9 @@ $(function() {
 			<div class="col-sm-1" style="background-color: #FF9999">4</div>
 			<div class="col-sm-8" style="background-color: #99CCFF">5</div>
 		</div>
-		
+
 	</div> //-->
-	
+
 	<h2>OhGosh<font color="#d33682">Really</font></h2>
 
 <!-- <h1>OhGoshReally</h1> //-->
@@ -143,7 +54,7 @@ Commercial support is available at</p></div>
 
 	<i id="iconz" class="material-icons" style="font-size:24px;">arrow_downward</i>
 	<a id="textz" href="/sabnzbd">SABNZBD</a>
-  
+
 	</p>
 
 <p>
@@ -156,64 +67,64 @@ Commercial support is available at</p></div>
 
 	<i id="iconz" class="material-icons" style="font-size:24px;">ondemand_video</i>
 	<a id="textz" href="/sonarr">Sonarr</a><br/>
-	
+
 	</p>
 
 <p>
 	<i id="iconz" class="material-icons" style="font-size:24px;">accessibility</i>
 	<a id="textz" href="/jackett">Jackett</a><br/>
-	
+
 	</p>
 
 <p>
 	<i id="iconz" class="material-icons" style="font-size:24px;">queue_play_next</i>
 	<a id="textz" href="/plex">Plex</a><br/>
-	
+
 	</p>
 
 <p>
 	<i id="iconz" class="material-icons" style="font-size:24px;">home</i>
 	<a id="textz" href="/home">Home-Assistant</a><br/>
-	
+
 	</p>
 
 <p>
 	<i id="iconz" class="material-icons" style="font-size:24px;">dns</i>
 	<a id="textz" href="/pihole">Pi-Hole</a><br/>
-	
+
 	</p>
 
 <p>
 	<i id="iconz" class="material-icons" style="font-size:24px;">weekend</i>
 	<a id="textz" href="/couchpotato">CouchPotato</a><br/>
-	
+
 	</p>
 
 <p>
 	<i id="iconz" class="material-icons" style="font-size:24px;">cloud_download</i>
 	<a id="textz" href="/utorrent">uTorrent</a><br/>
-	
+
 	</p>
-	
+
 	</div>
   <div class="col-md-5"></div>
 </div>
 
-</div>	
+</div>
 
 <div id="separator" class="container">
 		<!-- <h3><p>My First Bootstrap Page</p></h3>
 		<p>This is some text.</p> //-->
-	
+
 		<div class="row">
 			<!-- <div class="col-sm-4" style="background-color: #FF9999"></div>
 			<div class="col-sm-4" style="background-color: #99CCFF"></div>
 			<div class="col-sm-4" style="background-color: #00CC99"></div> //-->
-			
+
 			<div class="col-sm-4" style="background-color: #dc322f"></div>
 			<div class="col-sm-4" style="background-color: #268bd2"></div>
 			<div class="col-sm-4" style="background-color: #859900"></div>
-			
+
 		</div>
 	</div>
 
@@ -258,5 +169,11 @@ Commercial support is available at</p></div>
 
 </content>
 
-</body>
-</html>
+<script>
+
+$(function() {
+  getLinks();
+});
+
+</script>
+{% endblock %}

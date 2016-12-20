@@ -1,85 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>TestPage</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
-	<!--	<link rel="stylesheet" type="text/css" href="css/fix.css"> !-->
-
-	<link rel="stylesheet" type="text/css" href="css/Custom1.css">
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-	<!-- Latest compiled JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
-	
-	<script src="js/custom.js"></script>
-
-	<script src="js/LogMenu.js"></script>
-	
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-<link rel="icon" href="iconmaybe4.png">
-
-<title>OhGoshReally</title>
-
-<style>
-	.parallax { 
-		background-image: url("DrM10.jpg");
-		height: 300px;
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		width: 100%;
-	}
-	
-	body {
-		margin:0;
-		padding:0;
-	}
-	
-	.affix {
-		top: 0;
-		width: 100%;
-	}
-
-	.affix + .container-fluid {
-		padding-top: 70px;
-	}
-
-</style>
-
-<div class="parallax"></div>
-	
-</head>
-<body>
-
-	<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="300">
-		<div class="container-fluid">
-		
-			
-			<!-- LOGO //-->
-			<div class="navbar-header">
-			
-				<!-- <a href="#" class="navbar-brand">OHGOSHREALLY</a> /-->
-			</div>
-			
-			<div>
-				<ul class="nav navbar-nav">
-					<li><a href="index.html">Admin</a></li>
-					<li><a href="#">Stats</a></li>
-					<li class="active"><a href="logs.html">Logs</a></li>
-					<li><a href="#">Settings</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+{% extends "admininterface/base.html" %}
+{% block content %}
 
 	<!--
 
@@ -313,6 +233,4 @@
 </b>
 
 </content>
-
-</body>
-</html>
+{% endblock %}
