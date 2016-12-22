@@ -5,4 +5,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^logs/', views.logs, name='logs'),
     url(r'^statustest/', views.statustest, name='statustest'),
+    url(r'^api', views.api, name='api'),
 ]

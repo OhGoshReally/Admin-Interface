@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 
+from . import jsonapi
 
 def index(request):
     context = {
@@ -20,3 +22,10 @@ def statustest(request):
         'title': 'logs',
     }
     return render(request, 'admininterface/statustest.html', context)
+
+
+def api(request):
+    if(request.method == 'GET'):
+        return JsonResponse(jsonapi.sabAPI('http://sabnzbd.vestern.se:8080',
+                                           'unknown', request.GET))
+    return HttpResponse("Something`s fucky")
