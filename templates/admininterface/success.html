@@ -1,0 +1,28 @@
+{% extends "admininterface/base.html" %}
+{% block content %}
+
+<h1>Successfull!</h1>
+<h2>{{ title }}</h2>
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+{% if redirect %}
+<p>You`ll automatically be redirected in <span id="seconds">{% if timeout %} {{ timeout }} {% else %} 5 {% endif %}</span> seconds, if not click <a href="{% url redirect %}">here</a>
+<script>
+$(function () {
+  var counter = {% if timeout %} {{ timeout }} {% else %} 5 {% endif %}
+  var countdown = setInterval(function (){
+    counter--;
+    if(counter < 0) {
+        window.location.href = {% url redirect %}
+    } else {
+      $("#seconds").text(counter.toString())
+    }
+  }, 1000)
+
+})
+
+</script>
+{% endif %}
+
+{% endblock %}

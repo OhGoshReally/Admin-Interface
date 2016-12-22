@@ -1,0 +1,26 @@
+{% extends "admininterface/base.html" %}
+{% block content %}
+
+	<h2>OhGosh<font color="#d33682">Really</font></h2>
+
+<Content>
+
+	{% if status %}
+
+	{{ status }}
+
+	{% else %}
+
+	<p>No status</p>
+
+	{% endif %}
+
+	<form action="{% url 'login' %}" method="post">
+	    {% csrf_token %}
+	    {{ form.as_ul }}
+	    <input type="submit" value="Login" />
+	</form>
+
+</content>
+
+{% endblock %}
