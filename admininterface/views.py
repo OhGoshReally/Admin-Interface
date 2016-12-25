@@ -30,7 +30,7 @@ def loginView(request):
     context = {
         'title': 'Login',
     }
-    if(request.user.is_authenticated):
+    if(request.user.is_authenticated()):
         return redirect('index')
     if(request.method == 'POST'):
         form = forms.Login(request.POST)
