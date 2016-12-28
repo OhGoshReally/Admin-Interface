@@ -1,3 +1,8 @@
 from django.db import models
+from django.contrib.auth import User
 
-# Create your models here.
+
+class SabConfig(models.Model):
+    user = models.ForeignKey(User)
+    url = models.URLField()
+    apikey = models.CharField()

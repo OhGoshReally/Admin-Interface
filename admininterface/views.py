@@ -26,6 +26,22 @@ def statustest(request):
     return render(request, 'admininterface/statustest.html', context)
 
 
+def settings(request):
+    if(not request.user.is_authenticated()):
+        return redirect('login')
+    else:
+        if(request.method == 'POST'):
+            form = forms.SabConfig(request.POST)
+            if(form.is_valid()):
+                url = form.cleaned_data['url']
+                key = form.cleaned_data['apikey']
+        else:
+            form = forms.SabConfig
+    context = {'title': 'Settings', 'form': form}
+    return render(request, 'admininterface/settings.html', context)
+
+
+
 def loginView(request):
     context = {
         'title': 'Login',

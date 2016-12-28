@@ -1,0 +1,21 @@
+{% extends "admininterface/base.html" %}
+{% block content %}
+
+	<h2>OhGosh<font color="#d33682">Really</font></h2>
+
+<!-- <h1>OhGoshReally</h1> //-->
+
+<Content>
+
+	<h1>Supercalafragalistic settings page.</h1>
+
+	<form action="{% url 'settings' %}" method="post">
+			{% csrf_token %}
+			{{ form.as_ul }}
+			<input type="submit" value="Save" />
+	</form>
+
+</content>
+
+
+{% endblock %}
