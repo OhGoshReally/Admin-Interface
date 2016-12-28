@@ -6,3 +6,4 @@ class SabConfig(models.Model):
     user = models.ForeignKey(User)
     url = models.URLField()
     apikey = models.CharField()
+    visible = models.BooleanField()

@@ -6,16 +6,12 @@ from django.contrib import messages
 from . import jsonapi, forms
 
 def index(request):
-    context = {
-        'title': 'index',
-        }
+    context = {'title': 'index',}
     return render(request, 'admininterface/index.html', context)
 
 
 def logs(request):
-    context = {
-    'title': 'logs',
-    }
+    context = {'title': 'logs',}
     return render(request, 'admininterface/logs.html', context)
 
 
@@ -59,10 +55,7 @@ def loginView(request):
                 context['message'] = 'Successfully logged in!'
                 context['redirect'] = 'index'
                 return render(request, 'admininterface/success.html', context)
-            else:
-                context['status'] = "Not logged in!"
     else:
-        context['status'] = "No POST data."
         form = forms.Login()
     context['form'] = form
     return render(request, 'admininterface/login.html', context)

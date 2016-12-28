@@ -17,7 +17,9 @@
 
 	<form action="{% url 'login' %}" method="post">
 	    {% csrf_token %}
-	    {{ form.as_ul }}
+			<table>
+				{{ form.as_table }}
+			</table>
 	    <input type="submit" value="Login" />
 	</form>
 

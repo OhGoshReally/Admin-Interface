@@ -11,8 +11,17 @@
 
 	<form action="{% url 'settings' %}" method="post">
 			{% csrf_token %}
-			{{ form.as_ul }}
-			<input type="submit" value="Save" />
+			<table>
+			{{ form.as_table }}
+			<tr>
+				<td>
+					<input type="submit" value="Save" />
+				</td>
+				<td>
+					<input type="button" value="Reset"  />
+				</td>
+			</tr>
+			</table>
 	</form>
 
 </content>
