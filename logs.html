@@ -3,13 +3,14 @@
 <head>
 	<title>TestPage</title>
 	<meta charset="utf-8">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
 	<!--	<link rel="stylesheet" type="text/css" href="css/fix.css"> !-->
 
-	<link rel="stylesheet" type="text/css" href="css/Custom1.css">
+	<link rel="stylesheet" type="text/css" href="css/logs.css">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -29,7 +30,7 @@
 <title>OhGoshReally</title>
 
 <style>
-	.parallax { 
+	/* .parallax { 
 		background-image: url("DrM10.jpg");
 		height: 300px;
 		background-attachment: fixed;
@@ -37,7 +38,7 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		width: 100%;
-	}
+	} 
 	
 	body {
 		margin:0;
@@ -51,11 +52,26 @@
 
 	.affix + .container-fluid {
 		padding-top: 70px;
-	}
+	} */
+
+		#headern {
+    		background-image: url('DrM10.jpg');
+    		background-repeat: no-repeat;
+    		background-attachment: fixed;
+		}
+		#headern {
+			background-size:100% auto;
+		}
 
 </style>
 
-<div class="parallax"></div>
+<div id="headern" class="container-fluid">
+
+	<div class="col-md-12" style="height: 300px">	
+
+</div>
+
+</div>
 	
 </head>
 <body>
@@ -121,10 +137,10 @@
                     </li>
                     <div class="menu">
                         <li>
-                            <a id="teckts" href="#"><b>All</b><i id="iconz" class="material-icons pull-right" style="font-size:18px;">dashboard</i></a>
+                            <a id="teckts" href="#" class="active"><b>All</b><i id="iconz" class="material-icons pull-right" style="font-size:18px;">dashboard</i></a>
                         </li>
                         <li>
-                            <a id="teckts" href="#" class="active"><b>SABNZBD</b><i id="iconz" class="material-icons pull-right" style="font-size:18px;">arrow_downward</i></a>
+                            <a id="teckts" href="#"><b>SABNZBD</b><i id="iconz" class="material-icons pull-right" style="font-size:18px;">arrow_downward</i></a>
                         </li>
                         <li>
                             <a id="teckts" href="#"><b>HTPC Manager</b><i id="iconz" class="material-icons pull-right" style="font-size:18px;">input</i></a>

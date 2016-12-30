@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 	<title>TestPage</title>
 	<meta charset="utf-8">
-	
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
 	<link rel="stylesheet" type="text/css" href="css/fix.css">
 
-	<link rel="stylesheet" type="text/css" href="css/Custom.css">
-	
+	<link rel="stylesheet" type="text/css" href="css/test2.css">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<!-- Latest compiled JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
-	
+
 	<script src="js/custom.js"></script>
-	
+
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-<link rel="icon" href="iconmaybe4.png">
+	<link rel="icon" href="iconmaybe4.png">
 
 <title>OhGoshReally</title>
 
 <style>
-	.parallax {
+	/* .parallax {
 		background-image: url("DrM10.jpg");
 		height: 300px;
 		background-attachment: fixed;
@@ -41,7 +42,7 @@
 		margin:0;
 		padding:0;
 	}
-	
+
 	.affix {
 		top: 0;
 		width: 100%;
@@ -49,61 +50,122 @@
 
 	.affix + .container-fluid {
 		padding-top: 70px;
-	}
+	} */
+
+		#headern {
+    		background-image: url('DrM10.jpg');
+    		background-repeat: no-repeat;
+		}
+		#headern {
+			background-size:100% auto;
+			min-height: 200px;
+			height: auto;
+		}
 
 </style>
 
-<div class="parallax"></div>
-	
-<script src="js/script.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<div id="headern" class="container-fluid">
+
+	<div class="col-md-12" style="height: 300px">
 
 
-<script>
+	</div>
 
-$(function() {
-  getLinks();
-});
-
-</script>
+</div>
 
 </head>
 <body>
-
-	<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="300">
+	<!--
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
-		
-			
-			<!-- LOGO //-->
+
+
 			<div class="navbar-header">
-			
-				<!-- <a href="#" class="navbar-brand">OHGOSHREALLY</a> /-->
+
+
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
 			</div>
-			
+
 			<div>
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.html">Admin</a></li>
-					<li><a href="#">Stats</a></li>
-					<li><a href="logs.html">Logs</a></li>
-					<li><a href="#">Settings</a></li>
+				<ul class="nav navbar-nav navbar-center navbar-user">
+					<li class="dropdown user-dropdown">
+						<li class="active"><a href="index.html">Admin</a></li>
+						<li><a href="#">Stats</a></li>
+						<li><a href="logs.html">Logs</a></li>
+						<li><a href="#">Settings</a></li>
+					</li>
 				</ul>
 			</div>
+			<div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 2</a></li>
+                    <li><a href="#">Item 3</a></li>
+                </ul>
+            </div>
 		</div>
 	</nav>
+
+	!-->
+
+	<div class="navbar navbar-inverse navbar-middle" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="hidden-md hidden-lg hidden-sm">
+                	<a class="navbar-brand navbar-middle"><b>Admin Interface</b></a>
+                </div>
+
+            </div>
+            <div class="collapse navbar-middle navbar-collapse">
+
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html"><span class="glyphicon glyphicon-tasks"></span> Admin</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-stats"></span> Stats</a></li>
+					<li><a href="logs.html"><span class="glyphicon glyphicon-list"></span> Logs</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+   				    <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+
+
+
+            </div>
+
+<!--
+<ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul> !-->
+
+        </div>
+
+    </div>
 
 	<!--
 
 	<div class="container">
 		<h1>My First Bootstrap Page</h1>
 		<p>This is some text.</p>
-	
+
 		<div class="row">
 			<div class="col-sm-4" style="background-color: #FF9999">Left</div>
 			<div class="col-sm-4" style="background-color: #99CCFF">Middle</div>
 			<div class="col-sm-4" style="background-color: #00CC99">Right</div>
 		</div>
 	</div>
-	
+
 	<div class="container">
 		<!-- <div class="row">
 			<div class="col-sm-1" style="background-color: #FF9999">1</div>
@@ -112,10 +174,11 @@ $(function() {
 			<div class="col-sm-1" style="background-color: #FF9999">4</div>
 			<div class="col-sm-8" style="background-color: #99CCFF">5</div>
 		</div>
-		
+
 	</div> //-->
-	
+
 	<h2>OhGosh<font color="#d33682">Really</font></h2>
+
 
 <!-- <h1>OhGoshReally</h1> //-->
 
@@ -130,90 +193,98 @@ Commercial support is available at</p></div>
   <div class="col-md-3"></div>
 </div>
 
-<!-- LINKS //-->
-
 <b>
+
+</div>
+
 
 <div class="row">
 
-  <div class="col-md-5"></div>
-  <div id="links" class="col-md-2">
+<div class="col-md-5"></div>
 
-<p>
+<div class="col-md-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><b id="logzhead">Systems</b></div>
+                        <div class="panel-body">
 
-	<i id="iconz" class="material-icons" style="font-size:24px;">arrow_downward</i>
-	<a id="textz" href="/sabnzbd">SABNZBD</a>
-  
-	</p>
 
-<p>
-	<i id="iconz" class="material-icons" style="font-size:24px;">input</i>
-	<a id="textz" href="/htpc">HTPC Manager</a><br/>
+                            <table class="table table-striped">
 
-	</p>
+								    <tbody>
+								      <tr>
 
-<p>
+								        <td><i id="iconz" class="material-icons" style="font-size:24px;">arrow_downward</i></font></td>
+								        <td><b><a id="textz" href="/sabnzbd">SABNZBD</a></b></td>
+								      </tr>
+								      <tr>
 
-	<i id="iconz" class="material-icons" style="font-size:24px;">ondemand_video</i>
-	<a id="textz" href="/sonarr">Sonarr</a><br/>
-	
-	</p>
+								        <td><i id="iconz" class="material-icons" style="font-size:24px;">input</i></font></td>
+								        <td><b><a id="textz" href="/htpc">HTPC Manager</a></b></td>
+								      </tr>
+								      <tr>
 
-<p>
-	<i id="iconz" class="material-icons" style="font-size:24px;">accessibility</i>
-	<a id="textz" href="/jackett">Jackett</a><br/>
-	
-	</p>
+								        <td><i id="iconz" class="material-icons" style="font-size:24px;">ondemand_video</i></td>
+								        <td><b><a id="textz" href="/sonarr">Sonarr</a></b></td>
+								      </tr>
+								      <tr>
 
-<p>
-	<i id="iconz" class="material-icons" style="font-size:24px;">queue_play_next</i>
-	<a id="textz" href="/plex">Plex</a><br/>
-	
-	</p>
+								        <td><i id="iconz" class="material-icons" style="font-size:24px;">accessibility</i></td>
+								        <td><b><a id="textz" href="/jackett">Jackett</a></b></td>
+								      </tr>
+								      <tr>
 
-<p>
-	<i id="iconz" class="material-icons" style="font-size:24px;">home</i>
-	<a id="textz" href="/home">Home-Assistant</a><br/>
-	
-	</p>
+								        <td><i id="iconz" class="material-icons" style="font-size:24px;">queue_play_next</i></td>
+								        <td><b><a id="textz" href="/plex">Plex</a></b></td>
+								      </tr>
+								      <tr>
 
-<p>
-	<i id="iconz" class="material-icons" style="font-size:24px;">dns</i>
-	<a id="textz" href="/pihole">Pi-Hole</a><br/>
-	
-	</p>
+								        <td><i id="iconz" class="material-icons" style="font-size:24px;">home</i></td>
+								        <td><b><a id="textz" href="/home">Home-Assistant</a></b></td>
+								      </tr>
+								      <tr>
 
-<p>
-	<i id="iconz" class="material-icons" style="font-size:24px;">weekend</i>
-	<a id="textz" href="/couchpotato">CouchPotato</a><br/>
-	
-	</p>
+								        <td><i id="iconz" class="material-icons" style="font-size:24px;">dns</i></td>
+								        <td><b><a id="textz" href="/pihole">Pi-Hole</a></b></td>
+								      </tr>
+								      <tr>
 
-<p>
-	<i id="iconz" class="material-icons" style="font-size:24px;">cloud_download</i>
-	<a id="textz" href="/utorrent">uTorrent</a><br/>
-	
-	</p>
-	
-	</div>
-  <div class="col-md-5"></div>
-</div>
+								        <td><i id="iconz" class="material-icons" style="font-size:24px;">weekend</i></td>
+								        <td><b><a id="textz" href="/couchpotato">CouchPotato</a></b></td>
+								      </tr>
+								      <tr>
 
-</div>	
+								        <td><i id="iconz" class="material-icons" style="font-size:24px;">cloud_download</i></td>
+								        <td><b><a id="textz" href="/utorrent">Utorrent</a></b></td>
+								      </tr>
+								      <tr>
+
+								    </tbody>
+
+
+
+								  </table>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5"></div>
+
+            </div>
+
+<!--
 
 <div id="separator" class="container">
-		<!-- <h3><p>My First Bootstrap Page</p></h3>
-		<p>This is some text.</p> //-->
-	
+
+
 		<div class="row">
-			<!-- <div class="col-sm-4" style="background-color: #FF9999"></div>
-			<div class="col-sm-4" style="background-color: #99CCFF"></div>
-			<div class="col-sm-4" style="background-color: #00CC99"></div> //-->
-			
-			<div class="col-sm-4" style="background-color: #dc322f"></div>
+
+			<div class="col-sm-4 visible-md visible-lg visible-sm" style="background-color: #dc322f"></div>
 			<div class="col-sm-4" style="background-color: #268bd2"></div>
-			<div class="col-sm-4" style="background-color: #859900"></div>
-			
+			<div class="col-sm-4 visible-md visible-lg visible-sm" style="background-color: #859900"></div>
+
 		</div>
 	</div>
 
@@ -254,7 +325,7 @@ Commercial support is available at</p></div>
   <div class="col-md-6"><p><b>The standard Lorem Ipsum passage, used since the 1500s</b></br></p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
   <div class="col-md-3"></div>
-</div>
+</div> !-->
 
 </content>
 
