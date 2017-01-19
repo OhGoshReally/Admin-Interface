@@ -97,14 +97,14 @@
             <div class="collapse navbar-middle navbar-collapse">
 
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html"><span class="glyphicon glyphicon-tasks"></span> Admin</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-stats"></span> Stats</a></li>
-					<li><a href="logs.html"><span class="glyphicon glyphicon-list"></span> Logs</a></li>
-					<li><a href="settings.html"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+          <li class="{% if nbar == 'home' %}active{% endif %}"><a href="{% url "index" %}" ><span class="glyphicon glyphicon-tasks"></span> Admin</a></li>
+					<li class="{% if nbar == 'status' %}active{% endif %}"><a href="{% url "status" %}"><span class="glyphicon glyphicon-stats"></span> Stats</a></li>
+					<li class="{% if nbar == 'logs' %}active{% endif %}"><a href="{% url "logs" %}"><span class="glyphicon glyphicon-list"></span> Logs</a></li>
+					<li class="{% if nbar == 'settings' %}active{% endif %}"><a href="{% url "settings" %}"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
           {% if request.user.is_authenticated %}
-            <li><a href="{% url "logout" %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li class="{% if nbar == 'logout' %}active{% endif %}"><a href="{% url "logout" %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           {% else %}
-   				    <li><a href="{% url "login" %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+   				    <li class="{% if nbar == 'login' %}active{% endif %}"><a href="{% url "login" %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           {% endif %}
                 </ul>
             </div>

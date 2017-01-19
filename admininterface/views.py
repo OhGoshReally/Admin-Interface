@@ -6,23 +6,25 @@ from django.contrib import messages
 from . import jsonapi, forms
 
 def index(request):
-    context = {'title': 'index',}
+    context = {'title': 'index', 'nbar': 'home',}
     return render(request, 'admininterface/index.html', context)
 
 
 def logs(request):
-    context = {'title': 'logs',}
+    context = {'title': 'logs', 'nbar': 'logs',}
     return render(request, 'admininterface/logs.html', context)
 
 
 def statustest(request):
     context = {
         'title': 'logs',
+        'nbar': 'status',
     }
     return render(request, 'admininterface/statustest.html', context)
 
 
 def settings(request):
+    context = {'title':'Settings', 'nbar': 'settings',}
     if(not request.user.is_authenticated()):
         return redirect('login')
     else:
@@ -34,7 +36,7 @@ def settings(request):
                 form.save()
         else:
             form = forms.SabConfig
-    context = {'title': 'Settings', 'form': form}
+    context['form'] = form
     return render(request, 'admininterface/settings.html', context)
 
 
@@ -42,6 +44,7 @@ def settings(request):
 def loginView(request):
     context = {
         'title': 'Login',
+        'nbar': 'login',
     }
     if(request.user.is_authenticated()):
         return redirect('index')
@@ -69,6 +72,7 @@ def logoutView(request):
     logout(request)
     context = {
         'title': 'logout',
+        'nbar': 'login',
         'message': 'successfully logged out',
     }
     return render(request, 'admininterface/success.html', context)
