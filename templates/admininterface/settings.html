@@ -9,13 +9,46 @@
 
 	<h1>Supercalafragalistic settings page.</h1>
 
+	<h3>SabNZBD</h3>
 	<form action="{% url 'settings' %}" method="post">
 			{% csrf_token %}
 			<table>
-			{{ form.as_table }}
+			{{ sabnzbdform }}
 			<tr>
 				<td>
-					<input type="submit" value="Save" />
+					<input type="submit" value="Save" name="sabnzbd" />
+				</td>
+				<td>
+					<input type="button" value="Reset"  />
+				</td>
+			</tr>
+			</table>
+	</form>
+
+	<h3>Sonarr</h3>
+	<form action="{% url 'settings' %}" method="post">
+			{% csrf_token %}
+			<table>
+			{{ sonarrform.as_table }}
+			<tr>
+				<td>
+					<input type="submit" value="Save" name="sonarr" />
+				</td>
+				<td>
+					<input type="button" value="Reset"  />
+				</td>
+			</tr>
+			</table>
+	</form>
+
+	<h3>CouchPotato</h3>
+	<form action="{% url 'settings' %}" method="post">
+			{% csrf_token %}
+			<table>
+			{{ couchpotatoform.as_table }}
+			<tr>
+				<td>
+					<input type="submit" value="Save" name="couchpotato" />
 				</td>
 				<td>
 					<input type="button" value="Reset"  />

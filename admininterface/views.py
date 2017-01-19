@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib.auth import authenticate, logout, login
 from django.contrib import messages
+from django.forms import formset_factory
 
 from . import jsonapi, forms
 
@@ -25,20 +26,24 @@ def statustest(request):
 
 def settings(request):
     context = {'title':'Settings', 'nbar': 'settings',}
-    if(not request.user.is_authenticated()):
-        return redirect('login')
-    else:
-        if(request.method == 'POST'):
-            form = forms.SabConfig(request.POST)
-            if(form.is_valid()):
-                url = form.cleaned_data['url']
-                key = form.cleaned_data['apikey']
-                form.save()
-        else:
-            form = forms.SabConfig
-    context['form'] = form
-    return render(request, 'admininterface/settings.html', context)
 
+    if( not request.user.is_authenticated ):
+        return redirect('login')
+
+    SabNZBDFormSet = formset_factory(forms.SabConfigForm)
+    SonarrFormSet = formset_factory(forms.SonarrConfigForm)
+    CouchPotatoFormSet = formset_factory(forms.CouchPotatoConfigForm)
+    if( request.method == 'POST'):
+        sabnzbdformset = SabNZBDFormSet(request.POST, request.FILES, prefix='sabnzbd')
+        sonarrformset = SonarrFormSet(request.POST, request.FILES, prefix='sonarr')
+        couchpotatoformset = CouchPotatoFormSet(request.POST, request.FILES, prefix='couchpotato')
+        if( sabnzbdformset.is_valid() and sonarrformset.is_valid() and couchpotatoformset.is_valid() ):
+            pass
+    else:
+        context['sabnzbdform'] = SabNZBDFormSet(prefix='sabnzbd')
+        context['sonarrform'] = SonarrFormSet(prefix='sabnzbd')
+        context['couchpotatoform'] = CouchPotatoFormSet(prefix='sabnzbd')
+    return render(request, 'admininterface/settings.html', context)
 
 
 def loginView(request):

@@ -9,8 +9,21 @@ class User(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
 
-class SabConfig(models.Model):
+
+class BaseConnect(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     url = models.URLField()
     apikey = models.CharField()
     visible = models.BooleanField()
+
+
+class SabConfig(BaseConnect):
+    pass
+
+
+class SonarrConfig(BaseConnect):
+    pass
+
+
+class CouchPotatoConfig(BaseConnect):
+    pass

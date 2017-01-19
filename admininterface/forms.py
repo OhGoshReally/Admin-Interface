@@ -12,5 +12,17 @@ class Login(forms.Form):
 
 class SabConfigForm(forms.ModelForm):
     class Meta:
-        Model = SabConfig
+        model = SabConfig
+        fields = ['url', 'apikey', 'visible']
+
+
+class SonarrConfigForm(forms.ModelForm):
+    class Meta:
+        model = SabConfig
+        fields = ['url', 'apikey', 'visible']
+
+
+class CouchPotatoConfigForm(forms.ModelForm):
+    class Meta:
+        model = SabConfig
         fields = ['url', 'apikey', 'visible']
