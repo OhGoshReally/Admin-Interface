@@ -31,6 +31,7 @@ def settings(request):
             if(form.is_valid()):
                 url = form.cleaned_data['url']
                 key = form.cleaned_data['apikey']
+                form.save()
         else:
             form = forms.SabConfig
     context = {'title': 'Settings', 'form': form}
