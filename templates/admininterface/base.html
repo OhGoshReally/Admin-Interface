@@ -101,7 +101,11 @@
 					<li><a href="#"><span class="glyphicon glyphicon-stats"></span> Stats</a></li>
 					<li><a href="logs.html"><span class="glyphicon glyphicon-list"></span> Logs</a></li>
 					<li><a href="settings.html"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+          {% if request.user.is_authenticated %}
+            <li><a href="{% url "logout" %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          {% else %}
    				    <li><a href="{% url "login" %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          {% endif %}
                 </ul>
             </div>
         </div>

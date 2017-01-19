@@ -56,6 +56,9 @@ def loginView(request):
                 context['message'] = 'Successfully logged in!'
                 context['redirect'] = 'index'
                 return render(request, 'admininterface/success.html', context)
+            else:
+                context['status'] = 'Error'
+                context['message'] = 'Wrong username or password'
     else:
         form = forms.Login()
     context['form'] = form

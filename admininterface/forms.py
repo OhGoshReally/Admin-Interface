@@ -4,7 +4,10 @@ from .models import SabConfig, User
 
 class Login(forms.Form):
     username = forms.CharField(label='Username')
-    password = forms.CharField(label='Password', widget=forms.PasswordInput)
+    username.widget = forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'username or email'})
+    password = forms.CharField(label='Password')
+    password.widget = forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'password'})
+    rememberMe = forms.BooleanField(required=False)
 
 
 class SabConfigForm(forms.ModelForm):
