@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, logout, login
 from django.contrib import messages
 from django.forms import formset_factory
 
-from . import jsonapi, forms
+from . import jsonapi, forms, models, viewhelper
 
 def index(request):
     context = {'title': 'index', 'nbar': 'home',}
@@ -26,23 +26,15 @@ def statustest(request):
 
 def settings(request):
     context = {'title':'Settings', 'nbar': 'settings',}
-
     if( not request.user.is_authenticated ):
         return redirect('login')
-
-    SabNZBDFormSet = formset_factory(forms.SabConfigForm)
-    SonarrFormSet = formset_factory(forms.SonarrConfigForm)
-    CouchPotatoFormSet = formset_factory(forms.CouchPotatoConfigForm)
     if( request.method == 'POST'):
-        sabnzbdformset = SabNZBDFormSet(request.POST, request.FILES, prefix='sabnzbd')
-        sonarrformset = SonarrFormSet(request.POST, request.FILES, prefix='sonarr')
-        couchpotatoformset = CouchPotatoFormSet(request.POST, request.FILES, prefix='couchpotato')
-        if( sabnzbdformset.is_valid() and sonarrformset.is_valid() and couchpotatoformset.is_valid() ):
-            pass
+
+        pass
     else:
-        context['sabnzbdform'] = SabNZBDFormSet(prefix='sabnzbd')
-        context['sonarrform'] = SonarrFormSet(prefix='sabnzbd')
-        context['couchpotatoform'] = CouchPotatoFormSet(prefix='sabnzbd')
+        context['sabnzbdforms'] = settingsview.getSettingsForms(request.user, models.SabConfig, forms.SabConfigForm)
+        context['sonarrforms'] = settingsview.getSettingsForms(request.user, models.SonarrConfig, forms.SonarrConfigForm)
+        context['couchpotatoforms'] = settingsview.getSettingsForms(request.user, models.CouchPotatoConfig, forms.CouchPotatoConfigForm)
     return render(request, 'admininterface/settings.html', context)
 
 

@@ -10,6 +10,7 @@
 	<h1>Supercalafragalistic settings page.</h1>
 
 	<h3>SabNZBD</h3>
+	{% for sabnzbdform in sabnzbdforms %}
 	<form action="{% url 'settings' %}" method="post">
 			{% csrf_token %}
 			<table>
@@ -24,8 +25,10 @@
 			</tr>
 			</table>
 	</form>
+	{% endfor %}
 
 	<h3>Sonarr</h3>
+	{% for sonarrform in sonarrforms %}
 	<form action="{% url 'settings' %}" method="post">
 			{% csrf_token %}
 			<table>
@@ -40,8 +43,10 @@
 			</tr>
 			</table>
 	</form>
+	{% endfor %}
 
 	<h3>CouchPotato</h3>
+	{% for couchpotatoform in couchpotatoforms %}
 	<form action="{% url 'settings' %}" method="post">
 			{% csrf_token %}
 			<table>
@@ -56,6 +61,7 @@
 			</tr>
 			</table>
 	</form>
+	{% endfor %}
 
 </content>
 
