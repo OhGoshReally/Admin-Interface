@@ -32,9 +32,9 @@ def settings(request):
 
         pass
     else:
-        context['sabnzbdforms'] = settingsview.getSettingsForms(request.user, models.SabConfig, forms.SabConfigForm)
-        context['sonarrforms'] = settingsview.getSettingsForms(request.user, models.SonarrConfig, forms.SonarrConfigForm)
-        context['couchpotatoforms'] = settingsview.getSettingsForms(request.user, models.CouchPotatoConfig, forms.CouchPotatoConfigForm)
+        context['sabnzbdforms'] = viewhelper.getSettingsForms(request.user, models.SabConfig, forms.SabConfigForm)
+        context['sonarrforms'] = viewhelper.getSettingsForms(request.user, models.SonarrConfig, forms.SonarrConfigForm)
+        context['couchpotatoforms'] = viewhelper.getSettingsForms(request.user, models.CouchPotatoConfig, forms.CouchPotatoConfigForm)
     return render(request, 'admininterface/settings.html', context)
 
 
